@@ -166,15 +166,24 @@ body {
 
 /* ===== Cards and UI Elements ===== */
 .branch-card {
+  overflow: hidden;
   @apply bg-white rounded-xl p-6 shadow-lg transition-all duration-300;
-  transform: translateZ(0); /* For better performance */
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 1s ease-out;
+  word-wrap: break-word;
+  word-break: break-word;
 }
-
 
 .branch-card:hover,
 .branch-card:focus-within {
   @apply shadow-xl;
   transform: translateY(-5px);
+}
+
+.branch-card.slide-in-visible {
+  opacity: 1;
+  transform: translateY(0);
 }
 
 /* ===== Header Scroll Effect ===== */
@@ -304,13 +313,6 @@ nav a:focus::after {
     font-size: 1rem; 
   }
 }
-
-.branch-card {
-  overflow: hidden;
-  word-wrap: break-word;
-  word-break: break-word;
-}
-
 
 /* ===== Parallax Effect ===== */
 .parallax {
