@@ -1,0 +1,276 @@
+---
+import { Image } from 'astro:assets';
+import Layout from "../layouts/Layout.astro"
+import pr_img1 from "../assets/product-img/jardiance.jpg"
+import pr_img2 from "../assets/product-img/glycomet.jpg"
+import pr_img3 from "../assets/product-img/glynase.jpg"
+import pr_img4 from "../assets/product-img/istamet.jpg"
+import pr_img5 from "../assets/product-img/Janumet.jpg"
+import pr_img6 from "../assets/product-img/zomelis.jpg"
+import pr_img7 from "../assets/product-img/ondero.jpg"
+import pr_img8 from "../assets/product-img/jalra.jpg"
+import pr_img9 from "../assets/product-img/trajenta.jpg"
+import vt_img1 from "../assets/veterinary-img/bonefood.jpg"
+import vt_img2 from "../assets/veterinary-img/canin.jpg"
+import vt_img3 from "../assets/veterinary-img/drools.jpg"
+import vt_img4 from "../assets/veterinary-img/meo.jpg"
+import vt_img5 from "../assets/veterinary-img/pedigree.jpg"
+import vt_img6 from "../assets/veterinary-img/petbelt.jpg"
+import vt_img7 from "../assets/veterinary-img/petmask.jpg"
+import vt_img8 from "../assets/veterinary-img/petrope.jpg"
+import vt_img9 from "../assets/veterinary-img/shampoo.jpg"
+import ij_img1 from "../assets/injection-img/ij-img1.jpg"
+import ij_img2 from "../assets/injection-img/ij-img2.jpg"
+import ij_img3 from "../assets/injection-img/ij-img3.jpg"
+import ij_img4 from "../assets/injection-img/ij-img4.jpg"
+import ij_img5 from "../assets/injection-img/ij-img5.jpg"
+import ij_img6 from "../assets/injection-img/ij-img6.jpg"
+import ij_img7 from "../assets/injection-img/ij-img7.jpg"
+import ij_img8 from "../assets/injection-img/ij-img8.jpg"
+import ij_img9 from "../assets/injection-img/ij-img9.jpg"
+
+const veterinaries = [
+  {
+    img : vt_img1,
+    name: "Jardiance"
+  },
+  {    
+    img : vt_img2,
+    name: "Glycomet"
+  },
+  {
+    img : vt_img3,
+    name: "Glynase mf"
+  },
+  {    
+    img : vt_img4,
+    name: "Istamet",
+  },
+  {    
+    img : vt_img5,
+    name: "Janumet"
+  },
+  {    
+    img : vt_img6,
+    name: "Zomelis Met"
+  },
+  {    
+    img : vt_img7,
+    name: "Ondero Met"
+  },
+  {    
+    img : vt_img8,
+    name: "Jalra m 50/500"
+  },
+  {    
+    img : vt_img9,
+    name: "Trajenta - s"
+  }
+];
+const tablets = [
+  {
+    img : pr_img1,
+    name: "Jardiance"
+  },
+  {    
+    img : pr_img2,
+    name: "Glycomet"
+  },
+  {
+    img : pr_img3,
+    name: "Glynase mf"
+  },
+  {    
+    img : pr_img4,
+    name: "Istamet",
+  },
+  {    
+    img : pr_img5,
+    name: "Janumet"
+  },
+  {    
+    img : pr_img6,
+    name: "Zomelis Met"
+  },
+  {    
+    img : pr_img7,
+    name: "Ondero Met"
+  },
+  {    
+    img : pr_img8,
+    name: "Jalra m 50/500"
+  },
+  {    
+    img : pr_img9,
+    name: "Trajenta - s"
+  }
+];
+const injections = [
+  {
+    img : ij_img1,
+    name: "Jardiance"
+  },
+  {    
+    img : ij_img2,
+    name: "Glycomet"
+  },
+  {
+    img : ij_img3,
+    name: "Glynase mf"
+  },
+  {    
+    img : ij_img4,
+    name: "Istamet",
+  },
+  {    
+    img : ij_img5,
+    name: "Janumet"
+  },
+  {    
+    img : ij_img6,
+    name: "Zomelis Met"
+  },
+  {    
+    img : ij_img7,
+    name: "Ondero Met"
+  },
+  {    
+    img : ij_img8,
+    name: "Jalra m 50/500"
+  },
+  {    
+    img : ij_img9,
+    name: "Trajenta - s"
+  }
+];
+---
+
+<Layout title="Velavan Medical | product">
+<!-- Veterinary section -->
+ <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
+  <div class="container-custom relative">  
+    <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-gray-900 text-4xl md:text-5xl font-bold leading-tight">
+        Veterinary Products
+        </h1>
+    </div>   
+    <div  class="card-container py-10"> 
+      {veterinaries.map((veterinarie) => (
+        <div class="card">
+          <div class="hover-zoom rounded-lg overflow-hidden">
+            <Image 
+              src={veterinarie.img} 
+              alt={veterinarie.name}
+              class="w-full h-auto rounded-lg transition-all duration-500"
+              width={200}
+              height={200}
+            />
+          </div>
+          <h3 class="text-lg text-red text-center font-semibold mt-2">{veterinarie.name}</h3>            
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<!-- Tablet section -->
+ <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
+  <div class="container-custom relative">  
+    <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-gray-900 text-4xl md:text-5xl font-bold leading-tight">
+        Tablets
+        </h1>
+    </div>   
+    <div class="card-container py-10"> 
+      {tablets.map((tablet) => (
+        <div class="card">
+          <div class="hover-zoom rounded-lg overflow-hidden">
+            <Image 
+              src={tablet.img} 
+              alt={tablet.name}
+              class="w-full h-auto rounded-lg transition-all duration-500"
+              width={200}
+              height={200}
+            />
+          </div>
+          <h3 class="text-lg text-red text-center font-semibold mt-2">{tablet.name}</h3>            
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+<!-- Injection section -->
+ <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
+  <div class="container-custom relative">  
+    <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-gray-900 text-4xl md:text-5xl font-bold leading-tight">
+        Injections
+        </h1>
+    </div>   
+    <div class="card-container py-10"> 
+      {injections.map((injection) => (
+        <div class="card">
+          <div class="hover-zoom rounded-lg overflow-hidden">
+            <Image 
+              src={injection.img} 
+              alt={injection.name}
+              class="w-full h-auto rounded-lg transition-all duration-500"
+              width={200}
+              height={200}
+            />
+          </div>
+          <h3 class="text-lg text-red text-center font-semibold mt-2">{injection.name}</h3>            
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+  <!-- Animation script -->
+  <!-- <script>
+  document.addEventListener("astro:page-load", () => {
+    const container = document.getElementById('card-container');
+    if (!container) return;
+
+    let scrollAmount = 0;
+    const scrollStep = 220; // Adjust this to match .card width + margin
+    const scrollInterval = 2000;
+
+    setInterval(() => {
+      if (scrollAmount + container.clientWidth >= container.scrollWidth) {
+        scrollAmount = 0;
+      } else {
+        scrollAmount += scrollStep;
+      }
+
+      container.scrollTo({
+        left: scrollAmount,
+        behavior: 'smooth'
+      });
+    }, scrollInterval);
+  }); -->
+  <script>
+  document.addEventListener("astro:page-load", () => {
+    const containers = document.querySelectorAll('.card-container');
+    const scrollStep = 220;
+    const scrollInterval = 2000;
+
+    containers.forEach(container => {
+      let scrollAmount = 0;
+
+      setInterval(() => {
+        if (scrollAmount + container.clientWidth >= container.scrollWidth) {
+          scrollAmount = 0;
+        } else {
+          scrollAmount += scrollStep;
+        }
+
+        container.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }, scrollInterval);
+    });
+  });
+</script>
+</script>
+</Layout>

@@ -1,19 +1,19 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from "../layouts/Layout.astro"
-import img1 from "../../public/vm-1.jpg"
-import img2 from "../../public/vm-2.jpg"
-import img3 from "../../public/vm-3.jpg"
-import img4 from "../../public/vm-4.jpg"
-import img5 from "../../public/vm-5.jpg"
-import img6 from "../../public/vm-6.jpg"
+import img1 from "../assets/branch-img/vm-1.jpg"
+import img2 from "../assets/branch-img/vm-2.jpg"
+import img3 from "../assets/branch-img/vm-3.jpg"
+import img4 from "../assets/branch-img/vm-4.jpg"
+import img5 from "../assets/branch-img/vm-5.jpg"
+import img6 from "../assets/branch-img/vm-6.jpg"
 
 const branches = [
   {
     img : img1,
     address: "51,GIN FACTORY ROAD,THOOTHUKUDI-628002.",
     dlNo: "TNT/182/20,21",
-    branch: 1,
+    branch: "1",
     phoneNo: "0461 2383702, 91500 12971",
     email: "vmgfroad@gmail.com"
   },
@@ -21,7 +21,7 @@ const branches = [
     img : img2,
     address: "49,TELEGRAPH OFFICE ROAD,THOOTHUKUDI-628002.",
     dlNo: "TNT/358/20,21",
-    branch: 2,
+    branch: "2",
     phoneNo: "0461 2337725, 91500 12972",
     email: "vmtgroad@gmail.com"
   },
@@ -29,7 +29,7 @@ const branches = [
     img : img3,
     address: "115/8, DEVARPURAM ROAD,THOOTHUKUDI-628002.",
     dlNo: "TNT/278/20,21",
-    branch: 3,
+    branch: "3",
     phoneNo: "0461 2333725, 91500 12970",
     email: "vmdproad@gmail.com"
   },
@@ -37,7 +37,7 @@ const branches = [
     img : img4,
     address: "114B/2,3,4,5 ETTAYAPURAM ROAD,THOOTHUKUDI-628002.",
     dlNo: "TNT/391/20,21",
-    branch: 4,
+    branch: "4",
     phoneNo: "0461 2347223, 91500 12975",
     email: "vmeproad@gmail.com",
   },
@@ -45,7 +45,7 @@ const branches = [
     img : img5,
     address: "60,C2D NORTH FACING FLOOR, POOBALARAYAPURAM,THOOTHUKUDI-628001.",
     dlNo: "TN/TUT20/00592",
-    branch: 5,
+    branch: "5",
     phoneNo: "73050 12976",
     email: "vmplpoobalarayapuram@gmail.com"
   },
@@ -53,7 +53,7 @@ const branches = [
     img : img6,
     address: "52C/13,14 SN HIGH ROAD,TIRUNELVELI-628002.",
     dlNo: "TNY/3533/20,21",
-    branch: 6,
+    branch: "6",
     phoneNo: "0462 4971701, 91500 12973",
     email: "vmsnroad@gmail.com"
   }
@@ -79,7 +79,7 @@ const branches = [
             <div class="mt-6 hover-zoom rounded-lg overflow-hidden">
             <Image 
               src={branch.img} 
-              alt={branch.dlNo}
+              alt={branch.branch}
               class="w-full h-auto rounded-lg transition-all duration-500"
               width={300}
               height={200}
