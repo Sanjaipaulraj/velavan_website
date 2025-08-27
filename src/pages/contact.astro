@@ -16,89 +16,11 @@ const contactMethods = [
     email: "support@auditplus.io"
   },
 ];
-const branches = [
-  {
-    address: "51,GIN FACTORY ROAD,",
-    city: "THOOTHUKUDI-628002.",
-    dlNo: "TNT/182/20,21",
-    branch: 1,
-    phoneNo: "0461 2383702, 91500 12971",
-    email: "vmgfroad@gmail.com"
-  },
-  {
-    address: "49,TELEGRAPH OFFICE ROAD,",
-    city: "THOOTHUKUDI-628002.",
-    dlNo: "TNT/358/20,21",
-    branch: 2,
-    phoneNo: "0461 2337725, 91500 12972",
-    email: "vmtgroad@gmail.com"
-  },
-  {
-    address: "115/8, DEVARPURAM ROAD,",
-    city: "THOOTHUKUDI-628002.",
-    dlNo: "TNT/278/20,21",
-    branch: 3,
-    phoneNo: "0461 2333725, 91500 12970",
-    email: "vmdproad@gmail.com"
-  },
-  {
-    address: "114B/2,3,4,5 ETTAYAPURAM ROAD,",
-    city: "THOOTHUKUDI-628002.",
-    dlNo: "TNT/391/20,21",
-    branch: 4,
-    phoneNo: "0461 2347223, 91500 12975",
-    email: "vmeproad@gmail.com",
-  },
-  {
-    address: "60,C2D NORTH FACING FLOOR, POOBALARAYAPURAM,",
-    city: "THOOTHUKUDI-628001.",
-    dlNo: "TN/TUT20/00592",
-    branch: 5,
-    phoneNo: "73050 12976",
-    email: "vmplpoobalarayapuram@gmail.com"
-  },
-  {
-    address: "52C/13,14 SN HIGH ROAD,",
-    city: "TIRUNELVELI-628002.",
-    dlNo: "TNY/3533/20,21",
-    branch: 6,
-    phoneNo: "0462 4971701, 91500 12973",
-    email: "vmsnroad@gmail.com"
-  }
-];
 ---
 <Layout 
   title="Velavan Medical - Contact Us" 
   description="Get in touch with our team for sales inquiries, technical support, or partnership opportunities."
 > 
-
-  <section class="pt-8 pb-8 md:pt-22 md:pb-22">
-    <div class="container-custom">
-      <div class="text-center max-w-3xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-4xl md:text-5xl font-bold leading-tight">
-          Our Branches
-        </h1>
-      </div>
-    </div>
-  </section>
-
-  <section class="py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
-  <div class="container-custom relative">    
-    <div class="mt-6 p-2 grid grid-cols-1 md:grid-cols-3 gap-8">
-      {branches.map((branch, index) => (
-        <div class={`branch-card animate-on-scroll delay-${index + 2} group`}>
-          <h3 class="text-lg underline decoration-red decoration-dotted underline-offset-4  text-center text-xl font-semibold transition-colors duration-300">Branch {branch.branch}</h3>
-          <p class="mt-3 text-gray-700"><b>Address : </b>{branch.address}</p>
-          <p class="text-center mt-3 text-gray-700">{branch.city}</p>
-          <p class="mt-3 text-gray-700"><b>DL No : </b>{branch.dlNo}</p>
-          <p class="mt-3 text-gray-700"><b>Phone No : </b>{branch.phoneNo}</p>
-          <p class="mt-3 text-gray-700"><b>Email : </b>{branch.email}</p>
-        </div>
-      ))}
-    </div>
-  </div>
-</section>
-
   <div class="container-custom">
      <div class="mt-12 h-96 rounded-xl overflow-hidden animate-on-scroll">
         <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4610.6200295785075!2d80.2226179!3d13.0427156!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52674a309e480f%3A0x80205770d7267788!2sVelavan%20Medical!5e1!3m2!1sen!2sin!4v1756102546708!5m2!1sen!2sin"

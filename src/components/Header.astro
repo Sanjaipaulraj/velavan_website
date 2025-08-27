@@ -2,7 +2,7 @@
 import { Image } from 'astro:assets';
 
 const navItems = [
-  { name: 'Home', href: '/index' },
+  { name: 'Home', href: '/ ' },
   { name: 'About Us', href: '/about' },
   { name: 'Products', href: '/product' },
   { name: 'Services', href: '/service' },
@@ -10,13 +10,12 @@ const navItems = [
   { name: 'Contact Us', href: '/contact' },
 ];
 ---
-
 <header class="sticky top-0 z-50 w-full bg-white/80 backdrop-blur-md border-b border-gray-400" role="banner">
-  <div class="container-custom flex items-center justify-between h-20">
+  <div class="container-custom flex items-center justify-between h-20 md:justify-between">
     <a href="/" class="flex items-center transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded" aria-label="Velavan home">
       <Image src='/logo.png' alt="Velavan Medicals" width={90} height={20} class="transition-all duration-300 hover:brightness-110 focus:brightness-110" />
     </a>
-    
+
     <!-- Desktop Nav -->
     <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
       {navItems.map(item => (
@@ -28,25 +27,24 @@ const navItems = [
         </a>
       ))}
     </nav>
-    
-    <div class="hidden md:flex items-center space-x-4">
+
+    <div class="hidden lg:flex items-center space-x-4">
       <a href="stafflogin" class="hidden md:inline-block text-dark hover:text-red focus:text-red transition-all duration-300 relative focus:outline-none" target="_blank">
         Staff logIn
         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red transition-all duration-300 group-hover:w-full"></span>
       </a>
       <a href="/contact" class="hidden md:inline-block btn btn-primary focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2">Hotline 044-3500 1063</a>
-      
-      <button 
-        id="menu-toggle" 
-        class="md:hidden flex items-center transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded p-1" 
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="mobile-menu"
-      >
-        <img id="menu-icon" src="/hamburger.png" alt="Menu Icon" class="h-6 w-6" />
-      </button>
-
     </div>
+
+    <button 
+      id="menu-toggle" 
+      class="md:hidden flex items-center transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded p-1" 
+      aria-label="Toggle navigation menu"
+      aria-expanded="false"
+      aria-controls="mobile-menu"
+    >
+      <img id="menu-icon" src="/hamburger.png" alt="Menu Icon" class="h-6 w-6" />
+    </button>
   </div>
   
   <!-- Mobile Menu -->
