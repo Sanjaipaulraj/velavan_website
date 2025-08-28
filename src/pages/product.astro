@@ -1,6 +1,8 @@
 ---
 import { Image } from 'astro:assets';
 import Layout from "../layouts/Layout.astro"
+import left from "../icons/left_arrow.png"
+import right from "../icons/right_arrow.png"
 import pr_img1 from "../assets/product-img/jardiance.jpg"
 import pr_img2 from "../assets/product-img/glycomet.jpg"
 import pr_img3 from "../assets/product-img/glynase.jpg"
@@ -283,38 +285,90 @@ const foods = [
 
 <Layout title="Velavan Medical | product">
 <!-- Veterinary section -->
- <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
+ <!-- <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
   <div class="container-custom relative">  
     <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-tight">
-        Veterinary Products
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+           Veterinary Products
         </h1>
-    </div>   
+    </div>  
     <div  class="card-container py-6"> 
-      {veterinaries.map((veterinarie) => (
+      {veterinaries.map((veterinary) => (
         <div class="card">
           <div class="hover-zoom rounded-lg overflow-hidden">
             <Image 
-              src={veterinarie.img} 
-              alt={veterinarie.name}
+              src={veterinary.img} 
+              alt={veterinary.name}
               class="w-full h-auto rounded-lg transition-all duration-500"
               width={200}
               height={200}
-            />
+            />  
           </div>
-          <h3 class="text-lg text-center font-semibold mt-2">{veterinarie.name}</h3>            
+          <h3 class="text-lg text-center font-semibold mt-2">{veterinary.name}</h3>            
         </div>
       ))}
     </div>
   </div>
-</section>
+</section> -->
+
+  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
+    <div class="container-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+          Veterinary Products
+        </h1>
+      </div>
+
+      <!-- Add buttons for navigation -->
+      <div class="flex justify-between items-center py-6">
+        <!-- <button class="prev-button">Prev</button> -->
+         <div>
+            <Image
+            src={left}
+            alt={"left arrow"}
+            class="prev-button"
+            width={40}
+            height={40}
+          >
+         </div>
+
+        <div class="card-container">
+          {veterinaries.map((veterinary) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <Image 
+                  src={veterinary.img} 
+                  alt={veterinary.name}
+                  class="w-full h-auto rounded-lg transition-all duration-500"
+                  width={200}
+                  height={200}
+                />  
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{veterinary.name}</h3>            
+            </div>
+          ))}
+        </div>
+          <div>
+            <Image
+              src={right}
+              alt={"right arrow"}
+              class="next-button"
+              width={40}
+              height={40}
+            >
+          </div>
+        <!-- <button class="next-button">Next</button> -->
+      </div>
+    </div>
+  </section>
+
 <!-- Tablet section -->
  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
   <div class="container-custom relative">  
     <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h6 class="text-gray-900 text-2xl md:text-4xl font-bold leading-tight">
-        Tablets
-        </h6>
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+          Tablets
+        </h1>
     </div>   
     <div class="card-container py-6"> 
       {tablets.map((tablet) => (
@@ -334,13 +388,14 @@ const foods = [
     </div>
   </div>
 </section>
+
 <!-- Injection section -->
  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
   <div class="container-custom relative">  
     <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h6 class="text-gray-900 text-2xl md:text-4xl font-bold leading-tight">
-        Injections
-        </h6>
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+           Injections
+        </h1>
     </div>   
     <div class="card-container py-6"> 
       {injections.map((injection) => (
@@ -360,13 +415,14 @@ const foods = [
     </div>
   </div>
 </section>
+
 <!-- Syrup section -->
  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
   <div class="container-custom relative">  
     <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h6 class="text-gray-900 text-2xl md:text-4xl font-bold leading-tight">
-        Syrup
-        </h6>
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+          Syrup
+        </h1>
     </div>   
     <div class="card-container py-6"> 
       {syrups.map((syrup) => (
@@ -386,13 +442,14 @@ const foods = [
     </div>
   </div>
 </section>
+
 <!-- Cream section -->
  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
   <div class="container-custom relative">  
     <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h6 class="text-gray-900 text-2xl md:text-4xl font-bold leading-tight">
-        Cream
-        </h6>
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+          Cream
+        </h1>
     </div>   
     <div class="card-container py-6"> 
       {creams.map((cream) => (
@@ -412,13 +469,14 @@ const foods = [
     </div>
   </div>
 </section>
+
 <!-- Food section -->
  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">  
   <div class="container-custom relative">  
     <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h6 class="text-gray-900 text-2xl md:text-4xl font-bold leading-tight">
-        Food
-        </h6>
+        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+          Food
+        </h1>
     </div>   
     <div class="card-container py-6"> 
       {foods.map((food) => (
@@ -439,60 +497,142 @@ const foods = [
   </div>
 </section>
 
-  <!-- Animation script -->
-    <!-- <script>
-      document.addEventListener("astro:page-load", () => {
-        const containers = document.querySelectorAll('.card-container');
-        const scrollStep = 220;
-        const scrollInterval = 2000;
+<!-- Animation script -->
+  <!-- <script>
+    document.addEventListener("astro:page-load", () => {
+      const containers = document.querySelectorAll('.card-container');
+      const scrollStep = 220;
+      const scrollInterval = 3000;
 
-        containers.forEach(container => {
-          let scrollAmount = 0;
+      containers.forEach((container, index) => {
+        let scrollAmount = 0;
+        let isHovered = false;
+        const direction = index % 2 === 0 ? 1 : -1; 
 
-          setInterval(() => {
-            if (scrollAmount + container.clientWidth >= container.scrollWidth) {
-              scrollAmount = 0;
-            } else {
-              scrollAmount += scrollStep;
-            }
+        container.addEventListener("mouseenter", () => isHovered = true);
+        container.addEventListener("mouseleave", () => isHovered = false);
 
-            container.scrollTo({
-              left: scrollAmount,
-              behavior: 'smooth'
-            });
-          }, scrollInterval);
+        setInterval(() => {
+          if (isHovered) return;
+          const maxScroll = container.scrollWidth - container.clientWidth;
+
+          scrollAmount += direction * scrollStep;
+
+          if (scrollAmount < 0) {
+            scrollAmount = maxScroll;
+          } else if (scrollAmount > maxScroll) {
+            scrollAmount = 0;
+          }
+
+          container.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
+        }, scrollInterval);
+      });
+    });
+  </script> -->
+
+
+  <!-- <script>
+    document.addEventListener("astro:page-load", () => {
+    const containers = document.querySelectorAll('.card-container');
+    const scrollStep = 220; // How much the container scrolls per step
+    const scrollInterval = 3000;
+
+    containers.forEach((container,index) => {
+      const nextButton = container.parentElement ? container.parentElement.querySelector('.next-button') : null;
+      const prevButton = container.parentElement ? container.parentElement.querySelector('.prev-button') : null;
+
+      // Optional chaining: safely add event listeners
+      nextButton?.addEventListener('click', () => {
+        container.scrollBy({
+          left: scrollStep,
+          behavior: 'smooth'
         });
       });
-    </script> -->
 
-    <script>
-      document.addEventListener("astro:page-load", () => {
-        const containers = document.querySelectorAll('.card-container');
-        const scrollStep = 220;
-        const scrollInterval = 2000;
-
-        containers.forEach((container, index) => {
-          let scrollAmount = 0;
-          const direction = index % 2 === 0 ? 1 : -1; // Alternate directions
-
-          setInterval(() => {
-            const maxScroll = container.scrollWidth - container.clientWidth;
-
-            scrollAmount += direction * scrollStep;
-
-            if (scrollAmount < 0) {
-              scrollAmount = maxScroll;
-            } else if (scrollAmount > maxScroll) {
-              scrollAmount = 0;
-            }
-
-            container.scrollTo({
-              left: scrollAmount,
-              behavior: 'smooth'
-            });
-          }, scrollInterval);
+      prevButton?.addEventListener('click', () => {
+        container.scrollBy({
+          left: -scrollStep,
+          behavior: 'smooth'
         });
       });
-    </script>
 
+      let scrollAmount = 0;
+      let isHovered = false;
+      const direction = index % 2 === 0 ? 1 : -1; 
+
+      container.addEventListener("mouseenter", () => isHovered = true);
+      container.addEventListener("mouseleave", () => isHovered = false);
+
+      setInterval(() => {
+        if (isHovered) return;
+        const maxScroll = container.scrollWidth - container.clientWidth;
+
+        // scrollAmount += scrollStep;
+        scrollAmount += direction * scrollStep;
+        if (scrollAmount < 0) scrollAmount = maxScroll;
+        else if (scrollAmount > maxScroll) scrollAmount = 0;
+
+        container.scrollTo({
+          left: scrollAmount,
+          behavior: 'smooth'
+        });
+      }, scrollInterval);
+      });
+    });
+  </script> -->
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const containers = document.querySelectorAll('.card-container');
+      const scrollStep = 220;
+      const scrollInterval = 3000;
+
+      let autoScrollEnabled = true; // Boolean flag to control auto-scroll
+      
+      containers.forEach((container,index) => {
+        const nextButton = container.parentElement ? container.parentElement.querySelector('.next-button') : null;
+        const prevButton = container.parentElement ? container.parentElement.querySelector('.prev-button') : null;
+
+        nextButton?.addEventListener('click', () => {
+          container.scrollBy({
+            left: scrollStep,
+            behavior: 'smooth'
+          });
+        });
+
+        prevButton?.addEventListener('click', () => {
+          container.scrollBy({
+            left: -scrollStep,
+            behavior: 'smooth'
+          });
+        });
+
+        let scrollAmount = 0;
+        let isHovered = false;
+        const direction = index % 2 === 0 ? 1 : -1; 
+
+        container.addEventListener("mouseenter", () => isHovered = true);
+        container.addEventListener("mouseleave", () => isHovered = false);
+
+        // Auto-scroll logic based on boolean flag
+        setInterval(() => {
+          if (isHovered || !autoScrollEnabled) return; // Prevent auto-scroll if hovered or disabled
+          const maxScroll = container.scrollWidth - container.clientWidth;
+          
+          // scrollAmount += scrollStep;
+          scrollAmount += direction * scrollStep;
+          if (scrollAmount < 0) scrollAmount = maxScroll;
+          else if (scrollAmount > maxScroll) scrollAmount = 0;
+
+          container.scrollTo({
+            left: scrollAmount,
+            behavior: 'smooth'
+          });
+        }, scrollInterval);
+      });
+    });
+  </script>
   </Layout>
