@@ -12,6 +12,7 @@ export default {
         'yellow': '#ede7c7',
         'lg-yellow': '#fffcee',
         'lg-white': '#f5f5f7',
+        'royal-blue': '#002a76',
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',

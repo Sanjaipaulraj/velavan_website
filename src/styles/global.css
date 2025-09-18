@@ -158,6 +158,8 @@ body {
  
 .container-custom {
   @apply container mx-auto px-2 md:px-2 lg:px-2 max-w-7xl;
+  width: 100%; 
+  padding: 0 2rem; 
 }
 
 .section {
@@ -186,37 +188,16 @@ body {
   transform: translateY(0);
 }
 
-/* .card-container {
-  position: relative;
-  display: flex;
-  overflow-x: auto;
-  scroll-behavior: smooth;
-  padding: 1rem;
-  transition: all 0.8s ease-in-out;
-  width: 100%;
-} */
-
 .card-container {
   position: relative;
   display: flex;
-  overflow-x: hidden; /* Hide the default scrollbar */
-  scroll-behavior: smooth;
+  /* overflow-x: hidden; */
+  overflow-x: scroll;
   padding: 1rem;
-  /* transition: all 0.8s ease-in-out; */
-  transition: all 0.8s ease-in-out;
   width: 100%;
+  scroll-behavior: smooth; /* Keeps the scroll smooth */
+  transition: scroll-left 0.3s ease;
 }
-
-/* .card-container::before,
-.card-container::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  width: 60px;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-} */
 
 .card-container::before,
 .card-container::after {
@@ -229,26 +210,49 @@ body {
   pointer-events: none;
 }
 
-/* .card {
-  min-width: 200px;
-  margin-right: 20px;
-  background: #f2f2f2;
-  padding: 20px;
-  flex-shrink: 0;
-  border-radius: 8px;
-}  */
+.card-container::-webkit-scrollbar {
+  display: none; /* Hide scrollbar */
+}
+
+.card-container.dragging {
+  cursor: grabbing;
+  cursor: -webkit-grabbing;
+} 
 
 .card {
-  min-width: 200px;
+  min-width: 150px; /* Adjust this for smaller images */
   margin-right: 20px;
   background: #f2f2f2;
-  padding: 20px;
+  padding: 15px; /* Adjust padding for consistency */
   flex-shrink: 0;
   border-radius: 8px;
+  text-align: center;
 }
-/* Add styling for the prev/next buttons */
+
+@media (max-width: 767px) {
+  .card-container {
+    scroll-snap-type: x mandatory;
+  }
+
+  .card {
+    width: 100%;
+    flex: 0 0 auto; /* Make each card take full width of the container */
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px) {
+  .card {
+    width: 30%; /* Adjust to have 3 items per row on medium screens */
+  }
+}
+
+@media (min-width: 1025px) {
+  .card {
+    width: 20%; /* Adjust to show 5 items per row on larger screens */
+  }
+}
+/* Styling for navigation buttons */
 .prev-button, .next-button {
-  background-color: #0073e6;
   color: white;
   border: none;
   padding: 10px;
@@ -260,8 +264,15 @@ body {
 }
 
 .prev-button:hover, .next-button:hover {
-  background-color: #005bb5;
+  background-color: #96191b;
 }
+
+/* Ensure smooth scrolling in flex layout */
+.card-container {
+  display: flex;
+  overflow-x: hidden;
+}
+
 .card {
   @apply min-w-[200px] mr-5 bg-gray-100 p-5 rounded-lg shrink-0;
 }
@@ -312,7 +323,7 @@ nav a:focus::after {
   left: 0;
   height: 3px;
   background: linear-gradient(to right, theme('colors.purple'), theme('colors.blue'));
-  z-index: 100;
+  /* z-index: 100; */
   width: 0%;
   transition: width 0.1s ease;
 }
@@ -363,7 +374,6 @@ nav a:focus::after {
   max-height: 0;
   opacity: 0;
 }
-
 
 #menu-toggle svg {
   transition: opacity 0.2s ease, transform 0.2s ease;
@@ -426,7 +436,6 @@ nav a:focus::after {
 
 /* ===== Focus Indicators ===== */
 *:focus {
-  /* outline: 2px solid theme('colors.purple'); */
   outline: 2px solid theme('colors.red');
   outline-offset: 2px;
 }
@@ -452,4 +461,35 @@ nav a:focus::after {
 
 .skip-link:focus {
   top: 6px;
+}
+
+
+/* New custom style widgets */
+
+.widget-container {
+  /* background-image: url('../assets/service-bg.jpg'); */
+  background-color: #fbffcf ;
+  padding: 20px; 
+  text-align: center;
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: #002a76;
+  overflow: hidden;
+  height: 350px; 
+  font-size: large;
+  align-items: center; 
+}
+
+
+.inline-container {
+  display: flex;
+  align-items: center;
+  padding-left: 70px;
+  padding-top: 20px;
+}
+.inline-container img {
+  width: 40px; 
+  height: 40px;
+  margin-right: 20px;  
 }

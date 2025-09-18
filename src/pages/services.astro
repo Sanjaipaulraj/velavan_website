@@ -1,0 +1,107 @@
+---
+import Layout from "../layouts/Layout.astro"
+import { Image } from 'astro:assets';
+import serviceimg from "../assets/service-bg.jpg"
+import genuineimg from "../assets/genuine.png"
+import acimg from "../assets/air-conditioner.png"
+import fastserviceimg from "../assets/fast-service.png"
+import doorstepimg from "../assets/door-step.png"
+import fridgeimg from "../assets/fridge.png"
+import customercareimg from "../assets/customer-care.png"
+import brandedmedicineimg from "../assets/branded-medicine.png"
+import specialcareimg from "../assets/special-care.png"
+import tempimg from "../assets/temperature.png"
+import shipworldwideimg from "../assets/ship-worldwide.png"
+import shipcustomersimg from "../assets/ship-customers.png"
+---
+
+<Layout>
+        <div class = "p-4">
+          <div class="widget-container" >
+                <h2 class = "pt-20 font-bold sm:text-3xl md:text-4xl lg:text-5xl">Our Services</h2>
+                <p class= "pt-5 font-semibold">At Bawa Medicals, we offer expert consultations, pharmaceutical guidance, and essential vaccinations to meet your health needs. Experience compassionate, patient-focused care in&nbsp;cutting-edge facilities.</p>
+          </div> 
+          <div class="container-custom">
+            <h1 class="pt-10 font-bold sm:text-4xl md:text-4xl lg:text-5xl text-royal-blue">Services</h1>  
+          </div> 
+           <!--Genuine image  -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={genuineimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">100% genuine medicines</p>
+            </div>
+          </div>
+          <!-- Ac image -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={acimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Air conditioned showroom</p>
+            </div>
+          </div>
+          <!-- fast service image -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={fastserviceimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Fast & Reliable Services.</p>
+            </div>
+          </div>
+          <!-- door step image -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={doorstepimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Doorstep Delivery</p>
+            </div>
+          </div>
+          <!-- 24X7 image -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={fridgeimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">24 X 7 properly maintained refrigeration for all cold chain products</p>
+            </div>
+          </div>
+          <!-- Trusted Customer Care -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={customercareimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Trusted Customer Care</p>
+            </div>
+          </div>
+          
+          <!-- Branded medicines Care -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={brandedmedicineimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Only exact mentioned branded medicines are given as per prescription</p>
+            </div>
+          </div>
+          <!-- Special Care -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={specialcareimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Special Care on Life saving medicines & Short Supply Medicines</p>
+            </div>
+          </div>
+          <!-- Controlled temperature -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={tempimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Medicines are maintained at the mentioned Controlled Temperature</p>
+            </div>
+          </div>
+          <!-- Shipping medicines -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={shipworldwideimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Shipping Medicines Worldwide for International Patients.</p>
+            </div>
+          </div>
+          <!-- Exporting medicines -->
+          <div class="container-custom">
+            <div class= "inline-container">
+                <Image src={shipcustomersimg} alt="Placeholder Image"></Image>
+                <p class="font-semibold lg:text-xl">Exporting Medicines Worldwide for International Customers.</p>
+            </div>
+          </div>
+
+        </div>		
+</Layout>
