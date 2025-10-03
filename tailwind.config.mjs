@@ -4,15 +4,15 @@ export default {
   theme: {
     extend: {
       colors: {
-        'purple': '#0e17a4',
-        'red': '#8b0002',
-        'blue': '#0070F3', 
-        'pink': '#FF4D4D',
-        'brown': '#200e00',
-        'yellow': '#ede7c7',
-        'lg-yellow': '#fffcee',
+        'red': '#D62828',
+        'yellow': '#F77F00',
+        "ud-yellow": "#FCBF49",
+        'lg-yellow': '#EAE2B7',
         'lg-white': '#f5f5f7',
-        'royal-blue': '#002a76',
+        'beige': "#fffcea",
+        'blue': '#003049',
+        'lg-beige': "#F3F0DF",
+        'lg-grey': '#dfe0e2',
         gray: {
           50: '#f9fafb',
           100: '#f3f4f6',

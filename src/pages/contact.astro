@@ -21,9 +21,18 @@ const contactMethods = [
   title="Velavan Medical - Contact Us" 
   description="Get in touch with our team for sales inquiries, technical support, or partnership opportunities."
 > 
+
+  <div class = "p-4">
+    <div class="widget-imgcontainer" >
+          <h2 class = "pt-6 font-bold sm:text-3xl md:text-4xl lg:text-5xl">Contact Us</h2>
+          <p class= "pt-5 pb-3 font-semibold">We’re here to assist you with any inquiries or support you may need.
+            <br>Whether you have questions our team is ready to help!</p>
+    </div>
+
+
   <div class="container-custom">
      <div class="mt-12 h-96 rounded-xl overflow-hidden animate-on-scroll">
-        <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d4610.6200295785075!2d80.2226179!3d13.0427156!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52674a309e480f%3A0x80205770d7267788!2sVelavan%20Medical!5e1!3m2!1sen!2sin!4v1756102546708!5m2!1sen!2sin"
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15547.556970597516!2d80.22513697715888!3d13.04272137394423!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3a52674a309e480f%3A0x80205770d7267788!2sVelavan%20Medical!5e0!3m2!1sen!2sin!4v1758525224182!5m2!1sen!2sin"
          class="w-full h-full border-0"  
          style="border:0;"
          allowfullscreen=""
@@ -31,33 +40,21 @@ const contactMethods = [
          referrerpolicy="no-referrer-when-downgrade">
       </iframe>
       </div> 
-
-      <div class="py-8 text-center max-w-3xl mx-auto animate-on-scroll">
-        <h2 class="text-3xl md:text-4xl font-bold">Address</h2>
-        <address class="mt-6 not-italic text-gray-600">
-          37, Shop No:1, Thambaiah Reddy Road Extension,<br>
-        West Mambalam, <br>Chennai - 600 033.
-        </address>
-        <p class="not-italic text-gray-600"><b class="text-gray-900">Phone : </b>044 - 3500 1063, +91 73055 12978</p>
-        <p class="not-italic text-gray-600"><b class="text-gray-900">Email : </b>vmplwestmambalam@gmail.com</p>
-        <p class="not-italic text-gray-600"><b class="text-gray-900">For enquiry contact : </b>95855 22275</p>
-        <p class="not-italic text-gray-600"><b class="text-gray-900">Common Whatsapp Number: </b>96985 66223</p>
-      </div>
   </div>
   
-  <section class="py-10 bg-gray">
+  <section class="py-10">
     <div class="container-custom">
-      <div class="max-w-3xl mx-auto bg-white rounded-xl shadow-lg overflow-hidden">
+      <div class="max-w-3xl mx-auto bg-lg-beige rounded-xl shadow-lg overflow-hidden">
         <div class="p-8 md:p-12">
-          <h2 class="text-2xl md:text-3xl font-bold mb-6">Send Us a Message</h2>
+          <h2 class="text-blue text-2xl md:text-3xl font-bold mb-6">Let's Talk...</h2>
           <form class="space-y-6">
             <div>
               <label for="name" class="block text-gray-700 font-medium mb-2"><b class="text-red">*</b>Name</label>
-                <input 
+              <input 
                   type="text" 
                   id="name" 
                   name="name" 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple focus:border-purple"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-blue"
                   required
                 />
             </div>
@@ -68,7 +65,7 @@ const contactMethods = [
                   type="email" 
                   id="email" 
                   name="email" 
-                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple focus:border-purple"
+                  class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-blue"
                   required
                 />
             </div>
@@ -79,7 +76,7 @@ const contactMethods = [
                 id="message" 
                 name="message" 
                 rows="5" 
-                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-purple focus:border-purple"
+                class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue focus:border-blue"
                 required
               ></textarea>
             </div>
@@ -170,4 +167,5 @@ const contactMethods = [
   });
 
 </script>
+
 </Layout>

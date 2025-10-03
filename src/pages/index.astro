@@ -1,9 +1,14 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import HERO from '../components/Hero.astro';
+import PRODUCT from '../components/Products.astro';
+import ABOUT from '../components/About.astro';
+import TESTIMONIAL from '../components/Testimonial.astro';
 ---
 
 <Layout title="Velavan Medicals">
-    <h1 class="py-10 text-gray-900 text-center text-red text-2xl md:text-4xl font-bold leading-tight">
-        Home Page
-    </h1>
+  <HERO />
+  <ABOUT />   
+  <PRODUCT />   
+  <TESTIMONIAL />   
 </Layout>

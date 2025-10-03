@@ -1,311 +1,50 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import { Image } from 'astro:assets';
-import left from "../icons/left_arrow.png"
-import right from "../icons/right_arrow.png"
-import pr_img1 from "../assets/product-img/jardiance.jpg"
-import pr_img2 from "../assets/product-img/glycomet.jpg"
-import pr_img3 from "../assets/product-img/glynase.jpg"
-import pr_img4 from "../assets/product-img/istamet.jpg"
-import pr_img5 from "../assets/product-img/Janumet.jpg"
-import pr_img6 from "../assets/product-img/zomelis.jpg"
-import pr_img7 from "../assets/product-img/ondero.jpg"
-import pr_img8 from "../assets/product-img/jalra.jpg"
-import pr_img9 from "../assets/product-img/trajenta.jpg"
-import vt_img1 from "../assets/veterinary-img/bonefood.jpg"
-import vt_img2 from "../assets/veterinary-img/canin.jpg"
-import vt_img3 from "../assets/veterinary-img/drools.jpg"
-import vt_img4 from "../assets/veterinary-img/meo.jpg"
-import vt_img5 from "../assets/veterinary-img/pedigree.jpg"
-import vt_img6 from "../assets/veterinary-img/petbelt.jpg"
-import vt_img7 from "../assets/veterinary-img/petmask.jpg"
-import vt_img8 from "../assets/veterinary-img/petrope.jpg"
-import vt_img9 from "../assets/veterinary-img/shampoo.jpg"
-import ij_img1 from "../assets/injection-img/mixtard.jpg"
-import ij_img2 from "../assets/injection-img/novomix.jpg"
-import ij_img3 from "../assets/injection-img/actorise.jpg"
-import ij_img4 from "../assets/injection-img/lonopin.jpg"
-import ij_img5 from "../assets/injection-img/lantus.jpg"
-import ij_img6 from "../assets/injection-img/voveran.jpg"
-import ij_img7 from "../assets/injection-img/deca.jpg"
-import ij_img8 from "../assets/injection-img/cresp.jpg"
-import ij_img9 from "../assets/injection-img/albumin.jpg"
-import sy_img1 from "../assets/syrup-img/ascoril.jpg"
-import sy_img2 from "../assets/syrup-img/alex.jpg"
-import sy_img3 from "../assets/syrup-img/zincovit.jpg"
-import sy_img4 from "../assets/syrup-img/haemup.jpg"
-import sy_img5 from "../assets/syrup-img/clevira.jpg"
-import sy_img6 from "../assets/syrup-img/dexorange.jpg"
-import sy_img7 from "../assets/syrup-img/sizodon.jpg"
-import sy_img8 from "../assets/syrup-img/oxetol.jpg"
-import sy_img9 from "../assets/syrup-img/lizoforce.jpg"
-import cr_img1 from "../assets/cream-img/acn.jpg"
-import cr_img2 from "../assets/cream-img/betadine.jpg"
-import cr_img3 from "../assets/cream-img/betnovate.jpg"
-import cr_img4 from "../assets/cream-img/momate.jpg"
-import cr_img5 from "../assets/cream-img/skinshine.jpg"
-import cr_img6 from "../assets/cream-img/susten.jpg"
-import cr_img7 from "../assets/cream-img/tenovate.jpg"
-import cr_img8 from "../assets/cream-img/zincoderm.jpg"
-import fd_img1 from "../assets/food-img/enfamile.jpg"
-import fd_img2 from "../assets/food-img/ensure.jpg"
-import fd_img3 from "../assets/food-img/ceregrow.jpg"
-import fd_img4 from "../assets/food-img/lactodex.jpg"
-import fd_img5 from "../assets/food-img/lactogen.jpg"
-import fd_img6 from "../assets/food-img/mama.jpg"
-import fd_img7 from "../assets/food-img/maxvida.jpg"
-import fd_img8 from "../assets/food-img/vivamom.jpg"
-import fd_img9 from "../assets/food-img/horlicks.jpg"
+const response = await fetch('https://res.cloudinary.com/dhgniyaiy/raw/upload/v1758968871/content_vmh6za.json');
+const data = await response.json();
 
-const veterinaries = [
-  {
-    img : vt_img1,
-    name: "Bone Food"
-  },
-  {    
-    img : vt_img2,
-    name: "Royal Canin"
-  },
-  {
-    img : vt_img3,
-    name: "Drools"
-  },
-  {    
-    img : vt_img4,
-    name: "Me O",
-  },
-  {    
-    img : vt_img5,
-    name: "Pedigree"
-  },
-  {    
-    img : vt_img6,
-    name: "Pet Belt"
-  },
-  {    
-    img : vt_img7,
-    name: "Pet Mask"
-  },
-  {    
-    img : vt_img8,
-    name: "Pet Rope"
-  },
-  {    
-    img : vt_img9,
-    name: "Shampoo"
-  }
-];
-const tablets = [
-  {
-    img : pr_img1,
-    name: "Jardiance"
-  },
-  {    
-    img : pr_img2,
-    name: "Glycomet"
-  },
-  {
-    img : pr_img3,
-    name: "Glynase mf"
-  },
-  {    
-    img : pr_img4,
-    name: "Istamet",
-  },
-  {    
-    img : pr_img5,
-    name: "Janumet"
-  },
-  {    
-    img : pr_img6,
-    name: "Zomelis Met"
-  },
-  {    
-    img : pr_img7,
-    name: "Ondero Met"
-  },
-  {    
-    img : pr_img8,
-    name: "Jalra m 50/500"
-  },
-  {    
-    img : pr_img9,
-    name: "Trajenta - s"
-  }
-];
-const injections = [
-  {
-    img : ij_img1,
-    name: "Human Mixtard"
-  },
-  {    
-    img : ij_img2,
-    name: "Novomix"
-  },
-  {
-    img : ij_img3,
-    name: "Actorise"
-  },
-  {    
-    img : ij_img4,
-    name: "Lonopin 40mg",
-  },
-  {    
-    img : ij_img5,
-    name: "Lantus Solostar"
-  },
-  {    
-    img : ij_img6,
-    name: "Voveran Injection"
-  },
-  {    
-    img : ij_img7,
-    name: "Deca Durabolin"
-  },
-  {    
-    img : ij_img8,
-    name: "Cresp Injection"
-  },
-  {    
-    img : ij_img9,
-    name: "Human Albamin Injection"
-  }
-];
-const syrups = [
-  {
-    img : sy_img1,
-    name: "Human Mixtard"
-  },
-  {    
-    img : sy_img2,
-    name: "Novomix"
-  },
-  {
-    img : sy_img3,
-    name: "Actorise"
-  },
-  {    
-    img : sy_img4,
-    name: "Lonopin 40mg",
-  },
-  {    
-    img : sy_img5,
-    name: "Lantus Solostar"
-  },
-  {    
-    img : sy_img6,
-    name: "Voveran Injection"
-  },
-  {    
-    img : sy_img7,
-    name: "Deca Durabolin"
-  },
-  {    
-    img : sy_img8,
-    name: "Cresp Injection"
-  },
-  {    
-    img : sy_img9,
-    name: "Human Albamin Injection"
-  }
-];
-const creams = [
-  {
-    img : cr_img1,
-    name: "ACN Gel"
-  },
-  {    
-    img : cr_img2,
-    name: "Betadine"
-  },
-  {
-    img : cr_img3,
-    name: "Betnovate"
-  },
-  {    
-    img : cr_img4,
-    name: "Momate - s",
-  },
-  {    
-    img : cr_img5,
-    name: "Skin Shine Cream"
-  },
-  {    
-    img : cr_img6,
-    name: "Susten Gel"
-  },
-  {    
-    img : cr_img7,
-    name: "Tenovate"
-  },
-  {    
-    img : cr_img8,
-    name: "Zincoderm"
-  }
-];
-const foods = [
-  {
-    img : fd_img1,
-    name: "Enfamile"
-  },
-  {    
-    img : fd_img2,
-    name: "Ensure"
-  },
-  {
-    img : fd_img3,
-    name: "Ceregrow"
-  },
-  {    
-    img : fd_img4,
-    name: "Lactodex",
-  },
-  {    
-    img : fd_img5,
-    name: "Lactogen"
-  },
-  {    
-    img : fd_img6,
-    name: "Mama Portioned"
-  },
-  {    
-    img : fd_img7,
-    name: "Maxvida"
-  },
-  {    
-    img : fd_img8,
-    name: "Vivamom"
-  },
-  {    
-    img : fd_img9,
-    name: "Horlicks"
-  }
-];
+const veterinaries = data.products.veterinaries;
+const creams = data.products.creams;
+const tablets = data.products.tablets;
+const injections = data.products.injections;
+const syrups = data.products.syrups;
+const foods = data.products.foods;
+const left = data.products.left;
+const right = data.products.right;
 ---
 
 <Layout title="Velavan Medical | Product Page">
-  <!-- Veterinary section -->
+  <div class = "p-4">
+  <div class="widget-imgcontainer" >
+    </div>
+  </div>
 
-  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
-    <div class="container-custom relative">
+  <div class="fab">
+      <button class="transform transition-all duration-300 hover:translate-y-5">Contact Us</button>
+  </div>
+
+  <!-- Veterinary section -->
+  
+  <section class="md:py-4 sm:py-2 lg:py-8  relative overflow-hidden">
+    <div class="container-spcl-custom relative">
       <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
           Veterinary Products
         </h1>
       </div>
 
       <div class="flex justify-between items-center py-6">
         <div>
-          <Image src={left} alt="left arrow"
+          <img src={left} alt="left arrow"
           class = "prev-button"
           width={55} height={55} />
         </div>
 
         <div class="card-container">
-          {veterinaries.map((veterinary) => (
+          {veterinaries.map((veterinary : { veterinary: string; name: string, img: string}) => (
             <div class="card">
               <div class="hover-zoom rounded-lg overflow-hidden">
-                <Image src={veterinary.img} alt={veterinary.name}
+                <img src={veterinary.img} alt={veterinary.name}
                 class ="w-full h-auto rounded-lg transition-all duration-500" 
                 width={200} height={200} />
               </div>
@@ -315,7 +54,7 @@ const foods = [
         </div>
 
         <div>
-          <Image src={right} alt="right arrow" 
+          <img src={right} alt="right arrow" 
           class = "next-button"
           width={55} height={55} />
         </div>
@@ -325,26 +64,26 @@ const foods = [
 
 <!-- Tablet section -->
 
-  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
-    <div class="container-custom relative">
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="container-spcl-custom relative">
       <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
           Tablets
         </h1>
       </div>
 
       <div class="flex justify-between items-center py-6">
         <div>
-          <Image src={left} alt="left arrow"
+          <img src={left} alt="left arrow"
           class = "prev-button"
           width={55} height={55} />
         </div>
 
         <div class="card-container">
-          {tablets.map((tablet) => (
+          {tablets.map((tablet: { tablet: string; name: string, img: string}) => (
             <div class="card">
               <div class="hover-zoom rounded-lg overflow-hidden">
-                <Image src={tablet.img} alt={tablet.name}
+                <img src={tablet.img} alt={tablet.name}
                 class ="w-full h-auto rounded-lg transition-all duration-500" 
                 width={200} height={200} />
               </div>
@@ -354,7 +93,7 @@ const foods = [
         </div>
 
         <div>
-          <Image src={right} alt="right arrow" 
+          <img src={right} alt="right arrow" 
           class = "next-button"
           width={55} height={55} />
         </div>
@@ -364,26 +103,26 @@ const foods = [
 
   <!-- Injection section -->
 
-  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
-    <div class="container-custom relative">
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="container-spcl-custom relative">
       <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
           Injections
         </h1>
       </div>
 
       <div class="flex justify-between items-center py-6">
         <div>
-          <Image src={left} alt="left arrow"
+          <img src={left} alt="left arrow"
           class = "prev-button"
           width={55} height={55} />
         </div>
 
         <div class="card-container">
-          {injections.map((injection) => (
+          {injections.map((injection: { injection: string; name: string, img: string}) => (
             <div class="card">
               <div class="hover-zoom rounded-lg overflow-hidden">
-                <Image src={injection.img} alt={injection.name}
+                <img src={injection.img} alt={injection.name}
                 class ="w-full h-auto rounded-lg transition-all duration-500" 
                 width={200} height={200} />
               </div>
@@ -393,7 +132,7 @@ const foods = [
         </div>
 
         <div>
-          <Image src={right} alt="right arrow" 
+          <img src={right} alt="right arrow" 
           class = "next-button"
           width={55} height={55} />
         </div>
@@ -403,26 +142,26 @@ const foods = [
 
   <!-- Syrup section -->
 
-  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
-    <div class="container-custom relative">
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="container-spcl-custom relative">
       <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
           Syrup
         </h1>
       </div>
 
       <div class="flex justify-between items-center py-6">
         <div>
-          <Image src={left} alt="left arrow"
+          <img src={left} alt="left arrow"
           class = "prev-button"
           width={55} height={55} />
         </div>
 
         <div class="card-container">
-          {syrups.map((syrup) => (
+          {syrups.map((syrup: { syrup: string; name: string, img: string}) => (
             <div class="card">
               <div class="hover-zoom rounded-lg overflow-hidden">
-                <Image src={syrup.img} alt={syrup.name}
+                <img src={syrup.img} alt={syrup.name}
                 class ="w-full h-auto rounded-lg transition-all duration-500" 
                 width={200} height={200} />
               </div>
@@ -432,7 +171,7 @@ const foods = [
         </div>
 
         <div>
-          <Image src={right} alt="right arrow" 
+          <img src={right} alt="right arrow" 
           class = "next-button"
           width={55} height={55} />
         </div>
@@ -442,26 +181,26 @@ const foods = [
 
   <!-- Cream section -->
 
-  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
-    <div class="container-custom relative">
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="container-spcl-custom relative">
       <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
           Cream
         </h1>
       </div>
 
       <div class="flex justify-between items-center py-6">
         <div>
-          <Image src={left} alt="left arrow"
+          <img src={left} alt="left arrow"
           class = "prev-button"
           width={55} height={55} />
         </div>
 
         <div class="card-container">
-          {creams.map((cream) => (
+          {creams.map((cream: { cream: string; name: string, img: string}) => (
             <div class="card">
               <div class="hover-zoom rounded-lg overflow-hidden">
-                <Image src={cream.img} alt={cream.name}
+                <img src={cream.img} alt={cream.name}
                 class ="w-full h-auto rounded-lg transition-all duration-500" 
                 width={200} height={200} />
               </div>
@@ -471,7 +210,7 @@ const foods = [
         </div>
 
         <div>
-          <Image src={right} alt="right arrow" 
+          <img src={right} alt="right arrow" 
           class = "next-button"
           width={55} height={55} />
         </div>
@@ -481,26 +220,26 @@ const foods = [
 
   <!-- Food section -->
 
-  <section class="md:py-4 sm:py-2 lg:py-8 bg-gradient-to-b from-white to-gray relative overflow-hidden">
-    <div class="container-custom relative">
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="container-spcl-custom relative">
       <div class="text-left max-w-1xl mx-auto animate-on-scroll">
-        <h1 class="text-gray-900 text-2xl md:text-4xl font-bold leading-snug">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
           Food
         </h1>
       </div>
       
       <div class="flex justify-between items-center py-6">
         <div>
-          <Image src={left} alt="left arrow"
+          <img src={left} alt="left arrow"
           class = "prev-button"
           width={55} height={55} />
         </div>
 
         <div class="card-container">
-          {foods.map((food) => (
+          {foods.map((food: { food: string; name: string, img: string}) => (
             <div class="card">
               <div class="hover-zoom rounded-lg overflow-hidden">
-                <Image src={food.img} alt={food.name}
+                <img src={food.img} alt={food.name}
                 class ="w-full h-auto rounded-lg transition-all duration-500" 
                 width={200} height={200} />
               </div>
@@ -510,7 +249,7 @@ const foods = [
         </div>
 
         <div>
-          <Image src={right} alt="right arrow" 
+          <img src={right} alt="right arrow" 
           class = "next-button"
           width={55} height={55} />
         </div>
