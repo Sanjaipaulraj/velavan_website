@@ -5,21 +5,14 @@ export default {
     extend: {
       colors: {
         'red': '#D62828',
-        'yellow': '#F77F00',
-        "ud-yellow": "#FCBF49",
-        'lg-yellow': '#EAE2B7',
-        'lg-white': '#f5f5f7',
         'beige': "#fffcea",
         'blue': '#003049',
         'lg-beige': "#F3F0DF",
-        'lg-grey': '#dfe0e2',
         gray: {
-          50: '#f9fafb',
           100: '#f3f4f6',
           200: '#e5e7eb', 
           300: '#d1d5db',
           400: '#9ca3af',
-          500: '#6b7280',
           600: '#4b5563',
           700: '#374151',
           800: '#1f2937',
