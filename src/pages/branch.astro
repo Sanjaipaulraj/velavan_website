@@ -11,17 +11,22 @@ const branches = data.branches.branchDetails;
 <Layout title="Velavan Medical | branches" description="Our branches.">
   <script type="module" src="/scripts/animations.js"></script>
 
-  <div class="p-4">
-    <div class="widget-imgcontainer">
+    <div class="widget-imgcontainer" >
       <h2 class="pt-4 font-bold sm:text-3xl md:text-4xl lg:text-5xl">Our Branches</h2>
-      <p class="pt-5 pb-3 font-semibold">
-        Velavan Medical has a network of branches across key locations, offering high-quality medical supplies and equipment. Each branch is committed to providing exceptional service
-        <br>
-        and ensuring the best healthcare products for our customers..
-      </p>
+        <p class="pt-5 pb-3 font-semibold">
+          Velavan Medical has a network of branches across key locations, offering high-quality medical supplies and equipment. Each branch is committed to providing exceptional service
+          <br>
+          and ensuring the best healthcare products for our customers..
+        </p>
     </div>
-
+   
+    <div class="fab">
+      <button class="transform transition-all duration-300 hover:translate-y-5">Contact Us</button>
+  </div>
     <section class="centered-section md:py-4 sm:py-2 lg:py-8">
+      <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+        <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+      </div>
       <div class="container-custom relative">
         <div>
           {branches.map((branch: { branch: string; address: string; img: string }) => (
@@ -59,5 +64,4 @@ const branches = data.branches.branchDetails;
         cards.forEach(card => observer.observe(card));
       });
     </script>
-  </div>
 </Layout>

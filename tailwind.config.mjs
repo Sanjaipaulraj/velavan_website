@@ -7,7 +7,7 @@ export default {
         'red': '#D62828',
         'beige': "#fffcea",
         'blue': '#003049',
-        'lg-beige': "#F3F0DF",
+        'lg-beige': "#e2dcbaff",
         gray: {
           100: '#f3f4f6',
           200: '#e5e7eb', 
