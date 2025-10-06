@@ -1,0 +1,14 @@
+[build]
+  # The build command to run, typically `npm run build` or `yarn build`
+  command = "npm run build"
+  
+  # The directory to publish, typically the `dist/` folder for Astro projects
+  publish = "dist"
+  
+  # Environment variables (optional)
+  environment = { 
+    NODE_VERSION = "16"  # Adjust to your Node version if needed
+  }
+
+[[plugins]]
+  package = "@netlify/plugin-astro"
