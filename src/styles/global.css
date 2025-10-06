@@ -225,7 +225,9 @@ body {
     max-width: 90px; 
     max-height: 40px; 
   }
-
+  .btntx{
+    display: none;
+  }
   }
 
 /* For medium screens */
@@ -254,7 +256,6 @@ body {
   }
 
   
-
   .fab {
     position: fixed;
     bottom: 16px;
@@ -321,7 +322,6 @@ nav a::after {
   height: 2px;
   bottom: -4px;
   left: 0;
-  background-color: theme('colors.blue');
   transition: width 0.3s ease;
 }
 
@@ -331,14 +331,6 @@ nav a:focus::after {
   outline: none;
 }
 
-.active-nav-link {
-  @apply text-red;
-}
-
-.active-nav-link::after {
-  width: 100%;
-  background-color: red; /* Red underline for active link */
-}
 
 /* ===== Scroll Progress Bar ===== */
 .scroll-progress-bar {

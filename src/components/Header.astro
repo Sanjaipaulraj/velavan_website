@@ -10,54 +10,48 @@ const navItems = [
   { name: 'Contact', href: '/contact' },
 ];
 ---
-<header class="sticky top-0 z-50 w-full bg-beige backdrop-blur-md border-b border-gray-400 " role="banner">
-  <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
-    <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
-  </div>
-  <div class="p-10 flex items-center justify-between h-20 md:justify-between">
-    <a 
-      href="/" 
-      class="flex items-center transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded" 
-      aria-label="Velavan medical home">
-        <Image src='/logo.png' alt="Velavan Medicals" width={240} height={50} class="p-2 transition-all duration-300 hover:brightness-110 focus:brightness-110" />
-    </a>
 
+<header class="sticky top-0 z-50 w-full bg-beige backdrop-blur-md border-b border-gray-400" role="banner">
+  <div class="pl-4 pr-4  flex items-center justify-between h-20">
+    <a href="/" class="flex items-center transition-transform duration-300 hover:scale-105 focus:scale-105 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded" aria-label="Auditplus home">
+      <Image src='/logo.png' alt="Velavan Medical" width={240} height={50} class="transition-all duration-300 hover:brightness-110 focus:brightness-110" />
+    </a>
+    
     <!-- Desktop Nav -->
-    <nav class="hidden md:flex items-center space-x-6" role="navigation" aria-label="Main navigation">
+    <nav class="hidden md:flex items-center space-x-8" role="navigation" aria-label="Main navigation">
       {navItems.map(item => (
         <a 
           href={item.href} 
-          class="lg:text-xl text-gray-700 hover:text-red  focus:text-red transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded px-2 py-1"
+          class="lg:text-xl text-gray-700 hover:text-red focus:text-red transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded px-2 py-1"
         >
           {item.name}
         </a>
       ))}
     </nav>
-
-    <div class="hidden lg:flex items-center space-x-5">
-      <a href="stafflogin" class="hidden md:inline-block lg:text-xl text-dark hover:text-red focus:text-red transition-all duration-300 relative focus:outline-none" target="_blank">
-        Staff logIn
+    
+    <div class="flex items-center space-x-4">
+      <a href="https://login" class="hidden md:inline-block text-dark hover:text-red focus:text-red transition-all duration-300 relative focus:outline-none" target="_blank">
+        Staf logIn
         <span class="absolute bottom-0 left-0 w-0 h-0.5 bg-red transition-all duration-300 group-hover:w-full"></span>
       </a>
-      <a href="/contact" class="btntx hidden lg:text-xl md:inline-block btn btn-primary focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2">Hotline 044-3500 1063</a>
-    </div>
+      <a href="/contact" class="btntx hidden md:inline-block btn btn-primary focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2">Hotline 044-3500 1063</a>
+      
+      <button 
+        id="menu-toggle" 
+        class="md:hidden flex items-center transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded p-1" 
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="mobile-menu"
+      >
+        <img id="menu-icon" src="/hamburger.png" alt="Menu Icon" class="h-6 w-6" />
+      </button>
 
-    <button 
-      id="menu-toggle" 
-      class="md:hidden flex items-center transition-transform duration-300 focus:outline-none focus:ring-2 focus:ring-red focus:ring-offset-2 rounded p-1" 
-      aria-label="Toggle navigation menu"
-      aria-expanded="false"
-      aria-controls="mobile-menu"
-    >
-      <img id="menu-icon" src="/hamburger.png" alt="Menu Icon" class="h-6 w-6" />
-    </button>
-  
-  
+    </div>
   </div>
   
   <!-- Mobile Menu -->
   <nav id="mobile-menu" class="hidden md:hidden bg-beige w-full border-t border-gray-100" role="navigation" aria-label="Mobile navigation">
-    <div class="container-custom py-4 space-y-4">
+    <div class="container-custom py-4 space-y-2">
       {navItems.map((item, index) => (
         <a 
           href={item.href} 
