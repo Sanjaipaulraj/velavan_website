@@ -1,0 +1,58 @@
+---
+import { Image } from 'astro:assets';
+
+const testimonials = [
+  {
+    quote: "I’ve been using Bawa Medicals for all my healthcare needs. The products are top-quality, and delivery is always quick. Highly recommend!",
+    author: "Dr. Thilak",
+    avatar: "/thilak.jpg"
+  },
+  {
+    quote: "Bawa Medicals has been our go-to for medicines and medical equipment. Their expert advice has been a lifesaver!",
+    author: "Dr. Sheela",
+    avatar: "/sheela.jpg"
+  },
+  {
+    quote: "The customer service is exceptional, and they always have what I need. I feel safe knowing I’m getting quality healthcare products.",
+    author: "Dr. Ramu",
+    avatar: "/ramu.jpg"
+  }
+];
+---
+
+<section class="py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 parallax" data-speed="0.15">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+  </div>
+  
+  <div class="container-custom relative">
+    <div class="text-center max-w-3xl mx-auto animate-on-scroll">
+      <h2 class="text-3xl md:text-4xl font-bold">
+        Meet Our Professionals
+      </h2>
+      <p class="mt-4 text-xl text-gray-600">
+        we value your opinion and strive to continuously improve our services. Your feedback helps us provide the best healthcare products and services, tailored to your needs. 
+        Here’s what some of our satisfied customers have to say:
+      </p>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-8">
+      {testimonials.map((testimonial, index) => (
+        <div 
+          class="testimonial-card bg-white p-8 rounded-xl shadow-lg transition-all duration-300" 
+          style={`animation-delay: ${index * 0.15}s`}
+        >
+            <img 
+            src={testimonial.avatar} 
+            alt={testimonial.author} 
+            class="w-32 h-32 object-cover rounded-full mx-auto mb-4 transition-transform duration-500 group-hover:scale-110"
+            />
+            <h4 class="p-5 text-xl text-center font-semibold text-blue mb-2 transition-colors duration-300 group-hover:text-red">{testimonial.author}</h4>
+            <p class="text-black italic">
+                {testimonial.quote}
+            </p>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,40 @@
+---
+import Layout from "../layouts/Layout.astro"
+
+const response = await fetch('https://res.cloudinary.com/dhgniyaiy/raw/upload/v1758968871/content_vmh6za.json');
+const data = await response.json();
+
+const services = data.services;  
+---
+
+<Layout>
+  <div class="widget-imgcontainer" >
+    <h2 class = "pt-6 font-bold sm:text-3xl md:text-4xl lg:text-5xl">Our Services</h2>
+        <p class= "pt-5 pb-3 font-semibold">At Velavan Medicals, we offer expert consultations, pharmaceutical guidance, and essential vaccinations to meet your health needs. Experience compassionate, 
+          patient-focused care in<br>cutting-edge facilities.</p>
+    </div>
+  </div>
+
+  <div class="fab">
+      <button class="transform transition-all duration-300 hover:translate-y-5">Contact Us</button>
+  </div>
+  <section class="pb-16 md:pt-28 md:pb-24 overflow-hidden relative">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+          <div class="container-custom">
+            <h1 class="font-bold sm:text-4xl md:text-4xl lg:text-5xl text-blue">Services</h1>  
+          </div> 
+           <div>
+              {services.map((service: { service: string; context: string; img: string }) => (
+                <div class="container-custom">
+                  <div class= "inline-container">
+                        <img src={service.img} alt="Placeholder Image" />
+                        <p class="font-semibold lg:text-xl">{service.context}</p>
+                  </div>
+                </div>
+              ))}
+           </div>       
+  </section>
+        	
+</Layout>

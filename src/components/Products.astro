@@ -1,0 +1,79 @@
+---
+import { Image } from 'astro:assets';
+import pedigree  from '../assets/prod-comp/pedigree.png';
+import legiyam  from '../assets/prod-comp/legiyam.png';
+import diaper  from '../assets/prod-comp/diaper.png';
+import horlicks  from '../assets/prod-comp/horlicks.png';
+import wheelchair  from '../assets/prod-comp/wheel-chair.png';
+import himalaya  from '../assets/prod-comp/himalaya.png';
+
+const categories = [
+  {
+    name: "Veterinary",
+    product: "pedigree",
+    img: pedigree
+  },
+  {
+    name: "Ayurvedic",
+    product: "legiyam",
+    img: legiyam
+  },
+  {
+    name: "Himalaya",
+    product: "himalaya",
+    img: himalaya
+  },
+  {
+    name: "Diaper",
+    product: "diaper",
+    img: diaper
+  },
+  {
+    name: "Horlicks",
+    product: "horlicks",
+    img: horlicks
+  },
+  {
+    name: "Wheel Chair",
+    product: "wheel chair",
+    img: wheelchair
+  }
+];
+---
+
+<section class="py-20 relative overflow-hidden">
+  <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+  </div>
+  <div class="container-custom relative">
+    <div class="text-left mx-auto animate-on-scroll">
+      <h2 class="text-blue text-3xl md:text-5xl font-bold">
+        Categories
+      </h2>
+    </div>
+    
+    <div class="mt-16 grid grid-cols-1 md:grid-cols-3 gap-14">
+      {categories.map((category, index) => (
+        <a href="/product">
+            <div 
+                class="animate-on-scroll group" 
+                style={`animation-delay: ${index * 0.15}s`}
+                >
+                <div class="animate-on-scroll delay-0 flex items-center mb-6">
+                    <img 
+                        src={category.img?.src} 
+                        alt={category.product}
+                        class="w-full h-auto transition-all duration-500 group-hover:scale-110"
+                        width={500}
+                        height={400} 
+                    />
+                </div>
+                    <h1 class = "text-blue text-center text-xl font-bold">
+                        {category.name}
+                    </h1>
+                </div>
+        </a>
+      ))}
+    </div>
+  </div>
+</section>

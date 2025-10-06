@@ -1,25 +1,6 @@
 ---
 import { Image } from 'astro:assets';
 
-const companyLinks = [
-  { name: 'Home', href: '/index' },
-  { name: 'About Us', href: '/about-us' },
-  { name: 'Gallery', href: '/gallery' },
-  { name: 'Contact Us', href: '/contact' },
-  { name: 'Staff Login', href: '/staff-login' },
-];
-
-const resourceLinks = [
-  { name: 'Documentation', href: '/documentation' },
-  { name: 'API Reference', href: '/documentation/api-reference' },
-  { name: 'Tutorials', href: '/tutorials' },
-  { name: 'Case Studies', href: '/case-studies' },
-];
-
-const legalLinks = [
-  { name: 'Privacy Policy', href: '/privacy-policy' },
-  // { name: 'Terms of Use', href: '/terms-of-use' },
-];
 
 const foodItems = [
   "Horlicks","Enfamil","Ensure","Mama protienx","Lactodex","Lactogen"
@@ -43,30 +24,30 @@ const covid19Items = [
 
 ---
 
-<!-- <footer class="bg-gray-900 text-white pt-16 pb-8 relative overflow-hidden"> -->
-<footer class="bg-white/80  backdrop-blur-md border-gray-400 border-2 pt-16 pb-8 relative ">
-    
-  <div class="container-custom relative"> 
+<footer class="bg-beige  backdrop-blur-md border-gray-400 border-2 pt-16 pb-8 relative ">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+    <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+  </div>
+  <div class="p-10"> 
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-7 gap-8 pb-12 border-b border-gray-800">
       <div class="lg:col-span-2">
 
         <a
           href="/"
-          class="inline-block transition-transform duration-300 hover:scale-105 group bg-white rounded-xl overflow-hidden p-1 relative"
-          style="width: 100px; height: 56px;"
+          class="inline-block transition-transform duration-300 hover:scale-105 group rounded-xl overflow-hidden p-1 relative"
           aria-label="Velavan medical home"
         >
           <div class="group-hover:opacity-100 transition-opacity duration-300 rounded-xl z-0"></div>
           <Image
             src='/logo.png' 
             alt="Velavan Medical"
-            width={90}
-            height={20}
+            width={240}
+            height={50}
             class="relative z-10 mx-auto"
           />
         </a>
         
-        <p class="mt-4 text-gray-900 max-w-md">
+        <p class="lg:text-xl  font-semibold mt-4 text-blue max-w-md">
           Velavan Medical
         </p>
         <p class="mt-4 text-gray-900 max-w-md">
@@ -84,12 +65,12 @@ const covid19Items = [
       </div>
       
       <div>
-        <h3 class="text-lg  font-semibold mb-4 text-gray-900 hover:text-red transition-colors duration-300">Food Items</h3>
-        <ul class="space-y-3">
+        <h3 class="text-lg font-semibold mb-4 text-blue hover:text-blue transition-colors duration-300">Food Items</h3>
+        <ul class="space-y-3 ">
           {foodItems.map((item) => (
             <li class="transform transition-all duration-300 hover:translate-x-1">
               <p 
-                class="text-gray-900 hover:text-red transition-colors duration-300 inline-block"
+                class="text-gray-900 hover:text-blue transition-colors duration-300 inline-block"
               >
                 {item}
               </p>
@@ -99,12 +80,12 @@ const covid19Items = [
       </div>
 
       <div>
-        <h3 class="text-lg  font-semibold mb-4 text-gray-900 hover:text-red transition-colors duration-300">Veterinary Thing</h3>
+        <h3 class="text-lg  font-semibold mb-4 text-blue hover:text-blue transition-colors duration-300">Veterinary Thing</h3>
         <ul class="space-y-3">
           {veterinaryItems.map((item) => (
             <li class="transform transition-all duration-300 hover:translate-x-1">
               <p 
-                class="text-gray-900 hover:text-red transition-colors duration-300 inline-block"
+                class="text-gray-900 hover:text-blue transition-colors duration-300 inline-block"
               >
                 {item}
               </p>
@@ -114,12 +95,12 @@ const covid19Items = [
       </div>
 
       <div>
-        <h3 class="text-lg  font-semibold mb-4 text-gray-900 hover:text-red transition-colors duration-300">Equipments</h3>
+        <h3 class="text-lg  font-semibold mb-4 text-blue hover:text-blue transition-colors duration-300">Equipments</h3>
         <ul class="space-y-3">
           {equipments.map((item) => (
             <li class="transform transition-all duration-300 hover:translate-x-1">
               <p 
-                class="text-gray-900 hover:text-red transition-colors duration-300 inline-block"
+                class="text-gray-900 hover:text-blue transition-colors duration-300 inline-block"
               >
                 {item}
               </p>
@@ -129,12 +110,12 @@ const covid19Items = [
       </div>
 
       <div>
-        <h3 class="text-lg  font-semibold mb-4 text-gray-900 hover:text-red transition-colors duration-300">Ayurvedic</h3>
+        <h3 class="text-lg  font-semibold mb-4 text-blue hover:text-blue transition-colors duration-300">Ayurvedic</h3>
         <ul class="space-y-3">
           {ayurvedicItems.map((item) => (
             <li class="transform transition-all duration-300 hover:translate-x-1">
               <p 
-                class="text-gray-900 hover:text-red transition-colors duration-300 inline-block"
+                class="text-gray-900 hover:text-blue transition-colors duration-300 inline-block"
               >
                 {item}
               </p>
@@ -144,12 +125,12 @@ const covid19Items = [
       </div>
 
       <div>
-        <h3 class="text-lg  font-semibold mb-4 text-gray-900 hover:text-red transition-colors duration-300">Covid 19</h3>
+        <h3 class="text-lg  font-semibold mb-4 text-blue hover:text-blue transition-colors duration-300">Covid 19</h3>
         <ul class="space-y-3">
           {covid19Items.map((item) => (
             <li class="transform transition-all duration-300 hover:translate-x-1">
               <p 
-                class="text-gray-900 hover:text-red transition-colors duration-300 inline-block"
+                class="text-gray-900 hover:text-blue transition-colors duration-300 inline-block"
               >
                 {item}
               </p>
@@ -159,28 +140,12 @@ const covid19Items = [
       </div>
 
     </div>
-
-    <div class="w-full flex justify-center pb-12 pt-10 border-b border-gray-800">
-        <ul class="flex flex-wrap justify-center gap-x-6 gap-y-2">
-          {companyLinks.map((link, index) => (
-            <li class="transform transition-all duration-300 hover:translate-x-1">
-              <a 
-                href={link.href} 
-                class="text-gray-900 hover:text-red transition-colors duration-300 inline-block"
-                style={`transition-delay: ${index * 50}ms;`}
-              >
-                {link.name}
-              </a>
-            </li>
-          ))}
-        </ul>
-      </div>
             
 
     </div>
     
     <div class="pt-8 text-center text-gray-900 text-sm">
-      <p class="hover:text-red transition-colors duration-300">&copy; {new Date().getFullYear()} Velavan Medicals. All Rights Reserved. Designed by Auditplus.</p>
+      <p class="hover:text-blue transition-colors duration-300">&copy; {new Date().getFullYear()} Velavan Medicals. All Rights Reserved. Designed by Auditplus.</p>
     </div>
   </div>
 </footer>

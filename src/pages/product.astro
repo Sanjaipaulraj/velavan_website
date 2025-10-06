@@ -1,0 +1,588 @@
+---
+import Layout from '../layouts/Layout.astro';
+const response = await fetch('https://res.cloudinary.com/dhgniyaiy/raw/upload/v1758968871/content_vmh6za.json');
+const data = await response.json();
+
+const veterinaries = data.products.veterinaries;
+const creams = data.products.creams;
+const tablets = data.products.tablets;
+const injections = data.products.injections;
+const syrups = data.products.syrups;
+const foods = data.products.foods;
+const left = data.products.left;
+const right = data.products.right;
+---
+
+<Layout title="Velavan Medical | Product Page">
+  <div class = "p-4">
+  <div class="widget-imgcontainer" >
+    <h2 class="pt-4 font-bold sm:text-3xl md:text-4xl lg:text-5xl">Our Products</h2>
+        <p class="pt-5 pb-3 font-semibold">
+          Velavan Medical has a products across key locations, offering high-quality medical supplies and equipment. Each branch is committed to providing exceptional service
+          <br>
+          and ensuring the best healthcare products for our customers..
+        </p>
+    </div>
+  </div>
+
+  <div class="fab">
+      <button class="transform transition-all duration-300 hover:translate-y-5">Contact Us</button>
+  </div>
+
+  <!-- Veterinary section -->
+  
+  <section class="md:py-4 sm:py-2 lg:py-8  relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+    <div class="container-spcl-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
+          Veterinary Products
+        </h1>
+      </div>
+
+      <div class="flex justify-between items-center py-6">
+        <div>
+          <img src={left} alt="left arrow"
+          class = "prev-button"
+          width={55} height={55} />
+        </div>
+
+        <div class="card-container">
+          {veterinaries.map((veterinary : { veterinary: string; name: string, img: string}) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <img src={veterinary.img} alt={veterinary.name}
+                class ="w-full h-auto rounded-lg transition-all duration-500" 
+                width={200} height={200} />
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{veterinary.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <img src={right} alt="right arrow" 
+          class = "next-button"
+          width={55} height={55} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+<!-- Tablet section -->
+
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+    <div class="container-spcl-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
+          Tablets
+        </h1>
+      </div>
+
+      <div class="flex justify-between items-center py-6">
+        <div>
+          <img src={left} alt="left arrow"
+          class = "prev-button"
+          width={55} height={55} />
+        </div>
+
+        <div class="card-container">
+          {tablets.map((tablet: { tablet: string; name: string, img: string}) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <img src={tablet.img} alt={tablet.name}
+                class ="w-full h-auto rounded-lg transition-all duration-500" 
+                width={200} height={200} />
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{tablet.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <img src={right} alt="right arrow" 
+          class = "next-button"
+          width={55} height={55} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Injection section -->
+
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+    <div class="container-spcl-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
+          Injections
+        </h1>
+      </div>
+
+      <div class="flex justify-between items-center py-6">
+        <div>
+          <img src={left} alt="left arrow"
+          class = "prev-button"
+          width={55} height={55} />
+        </div>
+
+        <div class="card-container">
+          {injections.map((injection: { injection: string; name: string, img: string}) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <img src={injection.img} alt={injection.name}
+                class ="w-full h-auto rounded-lg transition-all duration-500" 
+                width={200} height={200} />
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{injection.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <img src={right} alt="right arrow" 
+          class = "next-button"
+          width={55} height={55} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Syrup section -->
+
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+    <div class="container-spcl-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
+          Syrup
+        </h1>
+      </div>
+
+      <div class="flex justify-between items-center py-6">
+        <div>
+          <img src={left} alt="left arrow"
+          class = "prev-button"
+          width={55} height={55} />
+        </div>
+
+        <div class="card-container">
+          {syrups.map((syrup: { syrup: string; name: string, img: string}) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <img src={syrup.img} alt={syrup.name}
+                class ="w-full h-auto rounded-lg transition-all duration-500" 
+                width={200} height={200} />
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{syrup.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <img src={right} alt="right arrow" 
+          class = "next-button"
+          width={55} height={55} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cream section -->
+
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+    <div class="container-spcl-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
+          Cream
+        </h1>
+      </div>
+
+      <div class="flex justify-between items-center py-6">
+        <div>
+          <img src={left} alt="left arrow"
+          class = "prev-button"
+          width={55} height={55} />
+        </div>
+
+        <div class="card-container">
+          {creams.map((cream: { cream: string; name: string, img: string}) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <img src={cream.img} alt={cream.name}
+                class ="w-full h-auto rounded-lg transition-all duration-500" 
+                width={200} height={200} />
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{cream.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <img src={right} alt="right arrow" 
+          class = "next-button"
+          width={55} height={55} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Food section -->
+
+  <section class="md:py-4 sm:py-2 lg:py-8 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-5 parallax" data-speed="0.2">
+      <div class="absolute inset-0 bg-repeat" style="background-image: url('/dot-pattern.png');"></div>
+    </div>
+    <div class="container-spcl-custom relative">
+      <div class="text-left max-w-1xl mx-auto animate-on-scroll">
+        <h1 class="text-blue text-2xl md:text-4xl font-bold leading-snug">
+          Food
+        </h1>
+      </div>
+      
+      <div class="flex justify-between items-center py-6">
+        <div>
+          <img src={left} alt="left arrow"
+          class = "prev-button"
+          width={55} height={55} />
+        </div>
+
+        <div class="card-container">
+          {foods.map((food: { food: string; name: string, img: string}) => (
+            <div class="card">
+              <div class="hover-zoom rounded-lg overflow-hidden">
+                <img src={food.img} alt={food.name}
+                class ="w-full h-auto rounded-lg transition-all duration-500" 
+                width={200} height={200} />
+              </div>
+              <h3 class="text-lg text-center font-semibold mt-2">{food.name}</h3>
+            </div>
+          ))}
+        </div>
+
+        <div>
+          <img src={right} alt="right arrow" 
+          class = "next-button"
+          width={55} height={55} />
+        </div>
+      </div>
+    </div>
+  </section>
+
+  
+<!-- <script>
+  document.addEventListener("astro:page-load", () => {
+    const containers = document.querySelectorAll('.card-container');
+
+    containers.forEach((container,index) => {
+      const nextButton = container.parentElement ? container.parentElement.querySelector('.next-button') : null;
+      const prevButton = container.parentElement ? container.parentElement.querySelector('.prev-button') : null;
+
+      nextButton?.addEventListener('click', () => {
+        const items = Array.from(container.children);
+        const firstItem = items[0];
+
+      container.appendChild(firstItem);
+      });
+      
+      prevButton?.addEventListener('click', () => {
+        const items = Array.from(container.children);
+        const lastItem = items[items.length - 1];
+
+        container.insertBefore(lastItem, items[0]);
+      });
+    });
+  });
+</script> -->
+
+<!-- 
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const containers = document.querySelectorAll(".card-container");
+
+      containers.forEach((container) => {
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+        let scrollStep = 250;
+
+        const nextButton = container.parentElement ? container.parentElement.querySelector('.next-button') : null;
+        const prevButton = container.parentElement ? container.parentElement.querySelector('.prev-button') : null;
+
+        nextButton?.addEventListener('click', () => {
+          const items = Array.from(container.children);
+          const firstItem = items[0];
+
+        container.appendChild(firstItem);
+        });
+        
+        prevButton?.addEventListener('click', () => {
+          const items = Array.from(container.children);
+          const lastItem = items[items.length - 1];
+
+        container.insertBefore(lastItem, items[0]);
+        });
+        container.addEventListener("mousedown", (e) => {
+          const event = e as MouseEvent; 
+          isDown = true;
+          startX = event.clientX;
+          scrollLeft = container.scrollLeft;
+          event.preventDefault();
+        });
+
+        container.addEventListener("mousemove", (e) => {
+          const event = e as MouseEvent;
+          if (!isDown) return;
+          const x = event.clientX;
+          const walk = (x - startX) * 1.5; 
+          container.scrollLeft = scrollLeft - walk;
+        });
+
+        container.addEventListener("touchstart", (e) => {
+          const event = e as TouchEvent;
+          isDown = true;
+          startX = event.touches[ 0].clientX;
+          scrollLeft = container.scrollLeft;
+        });
+
+        container.addEventListener("touchmove", (e) => {
+          const event = e as TouchEvent;
+          if (!isDown) return;
+          const x = event.touches[0].clientX;
+          const walk = (x - startX) * 1.5;
+          container.scrollLeft = scrollLeft - walk;
+        });
+      });
+    });
+  </script> -->
+
+ <!-- <script>
+    document.addEventListener("astro:page-load", () => {
+    const containers = document.querySelectorAll(".card-container");
+
+    containers.forEach((container) => {
+      let isDown = false;
+      let startX = 0;
+      let scrollLeft = 0;
+      let scrollStep = 250;
+
+      const nextButton = container.parentElement ? container.parentElement.querySelector('.next-button') : null;
+      const prevButton = container.parentElement ? container.parentElement.querySelector('.prev-button') : null;
+
+      // Function to move first item to the end (next button or touch)
+      const moveFirstToLast = () => {
+        const items = Array.from(container.children);
+        const firstItem = items[0];
+        container.appendChild(firstItem); // Moves first item to last position
+      };
+
+      // Function to move last item to the front (prev button or touch)
+      const moveLastToFirst = () => {
+        const items = Array.from(container.children);
+        const lastItem = items[items.length - 1];
+        container.insertBefore(lastItem, items[0]); // Moves last item to front
+      };
+
+      // Next button click: Move first item to the end
+      nextButton?.addEventListener('click', moveFirstToLast);
+
+      // Previous button click: Move last item to the front
+      prevButton?.addEventListener('click', moveLastToFirst);
+
+      // Mouse event: Start the drag (mousedown)
+      container.addEventListener("mousedown", (e) => {
+        const event = e as MouseEvent;
+        isDown = true;
+        startX = event.clientX;
+        scrollLeft = container.scrollLeft;
+        event.preventDefault();
+      });
+
+      // Mouse event: Dragging (mousemove)
+      container.addEventListener("mousemove", (e) => {
+        const event = e as MouseEvent;
+        if (!isDown) return;
+        const x = event.clientX;
+        const walk = (x - startX) * 1.5;
+        container.scrollLeft = scrollLeft - walk;
+      });
+
+      // Mouse event: End the drag (mouseup)
+      container.addEventListener("mouseup", () => {
+        isDown = false;
+        // Trigger loop movement if scrolled too far (could be customized)
+        const items = Array.from(container.children);
+        const containerWidth = (container as HTMLElement).offsetWidth;
+        const scrollPosition = container.scrollLeft;
+
+        // Trigger loop on scroll end
+        if (scrollPosition < 0) {
+          container.scrollLeft = 0;
+          moveLastToFirst();
+        }
+        if (scrollPosition > containerWidth * (items.length - 1)) {
+          container.scrollLeft = containerWidth * (items.length - 2);
+          moveFirstToLast();
+        }
+      });
+
+      // Touch event: Start the drag (touchstart)
+      container.addEventListener("touchstart", (e) => {
+        const event = e as TouchEvent;
+        isDown = true;
+        startX = event.touches[0].clientX;
+        scrollLeft = container.scrollLeft;
+      });
+
+      // Touch event: Dragging (touchmove)
+      container.addEventListener("touchmove", (e) => {
+        const event = e as TouchEvent;
+        if (!isDown) return;
+        const x = event.touches[0].clientX;
+        const walk = (x - startX) * 1.5;
+        container.scrollLeft = scrollLeft - walk;
+      });
+
+      // Touch event: End the drag (touchend)
+      container.addEventListener("touchend", () => {
+        isDown = false;
+        // Trigger loop movement if scrolled too far (same logic as mouse)
+        const items = Array.from(container.children);
+        const containerWidth = (container as HTMLElement).offsetWidth;
+        const scrollPosition = container.scrollLeft;
+
+        // Trigger loop on scroll end
+        if (scrollPosition < 0) {
+          container.scrollLeft = 0;
+          moveLastToFirst();
+        }
+        if (scrollPosition > containerWidth * (items.length - 1)) {
+          container.scrollLeft = containerWidth * (items.length - 2);
+          moveFirstToLast();
+        }
+      });
+    });
+  });
+ </script> -->
+
+  <script>
+    document.addEventListener("astro:page-load", () => {
+      const containers = document.querySelectorAll(".card-container");
+
+      containers.forEach((container) => {
+        let isDown = false;
+        let startX = 0;
+        let scrollLeft = 0;
+
+        const nextButton = container.parentElement ? container.parentElement.querySelector('.next-button') : null;
+        const prevButton = container.parentElement ? container.parentElement.querySelector('.prev-button') : null;
+
+        // Function to move the first item to the end (next button or touch)
+        const moveFirstToLast = () => {
+          const items = Array.from(container.children);
+          const firstItem = items[0];
+          container.appendChild(firstItem); // Moves the first item to the last position
+        };
+
+        // Function to move the last item to the front (prev button or touch)
+        const moveLastToFirst = () => {
+          const items = Array.from(container.children);
+          const lastItem = items[items.length - 1];
+          container.insertBefore(lastItem, items[0]); // Moves the last item to the front
+        };
+
+        // Next button click: Move the first item to the end
+        nextButton?.addEventListener('click', moveFirstToLast);
+
+        // Previous button click: Move the last item to the front
+        prevButton?.addEventListener('click', moveLastToFirst);
+
+        // Mouse event: Start the drag (mousedown)
+        container.addEventListener("mousedown", (e) => {
+          const event = e as MouseEvent;
+          isDown = true;
+          startX = event.clientX;
+          scrollLeft = container.scrollLeft;
+          event.preventDefault();
+        });
+
+        // Mouse event: Dragging (mousemove)
+        container.addEventListener("mousemove", (e) => {
+          const event = e as MouseEvent;
+          if (!isDown) return;
+          const x = event.clientX;
+          const walk = (x - startX) * 1.5;
+          container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Mouse event: End the drag (mouseup)
+        container.addEventListener("mouseup", () => {
+          isDown = false;
+          // Trigger loop movement if scrolled too far (could be customized)
+          const items = Array.from(container.children);
+          const containerWidth = (container as HTMLElement).offsetWidth;
+          const scrollPosition = container.scrollLeft;
+
+          // Trigger loop on scroll end
+          if (scrollPosition < 0) {
+            container.scrollLeft = 0;
+            moveLastToFirst();
+          }
+          if (scrollPosition > containerWidth * (items.length - 1)) {
+            container.scrollLeft = containerWidth * (items.length - 2);
+            moveFirstToLast();
+          }
+        });
+
+        // Touch event: Start the drag (touchstart)
+        container.addEventListener("touchstart", (e) => {
+          const event = e as TouchEvent;
+          isDown = true;
+          startX = event.touches[0].clientX;
+          scrollLeft = container.scrollLeft;
+        });
+
+        // Touch event: Dragging (touchmove)
+        container.addEventListener("touchmove", (e) => {
+          const event = e as TouchEvent;
+          if (!isDown) return;
+          const x = event.touches[0].clientX;
+          const walk = (x - startX) * 1.5;
+          container.scrollLeft = scrollLeft - walk;
+        });
+
+        // Touch event: End the drag (touchend)
+        container.addEventListener("touchend", () => {
+          isDown = false;
+          // Trigger loop movement if scrolled too far (same logic as mouse)
+          const items = Array.from(container.children);
+          const containerWidth = (container as HTMLElement).offsetWidth;
+          const scrollPosition = container.scrollLeft;
+
+          // Trigger loop on scroll end
+          if (scrollPosition < 0) {
+            container.scrollLeft = 0;
+            moveLastToFirst();
+          }
+          if (scrollPosition > containerWidth * (items.length - 1)) {
+            container.scrollLeft = containerWidth * (items.length - 2);
+            moveFirstToLast();
+          }
+        });
+      });
+    });
+ </script>
+
+</Layout>
